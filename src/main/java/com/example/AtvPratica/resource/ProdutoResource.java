@@ -21,7 +21,11 @@ public class ProdutoResource implements IResource <Produto, Integer> {
         this.produtoService = produtoService;
     }
 
-
+    /**
+     * Este metodo cria um produto
+     * @param entity
+     * @return
+     */
     @Override
     @PostMapping (
             consumes ={MediaType.APPLICATION_JSON_VALUE},
@@ -32,6 +36,11 @@ public class ProdutoResource implements IResource <Produto, Integer> {
         return null;
     }
 
+    /**
+            * Este metodo visualiza o produto
+     * @param id
+     * @return
+     */
     @Override
     @GetMapping (
             value ="/{id}",
@@ -42,6 +51,10 @@ public class ProdutoResource implements IResource <Produto, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo lista um produto
+     * @return
+     */
     @Override
     @GetMapping (produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Produto> get() {
@@ -49,6 +62,12 @@ public class ProdutoResource implements IResource <Produto, Integer> {
         return List.of();
     }
 
+    /**
+     * Este metodo altera um produto
+     * @param id
+     * @param entity
+     * @return
+     */
     @Override
     @PutMapping (
             value = "/{id}",
@@ -61,6 +80,10 @@ public class ProdutoResource implements IResource <Produto, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo deleta um produto
+     * @param id
+     */
     @Override
     @DeleteMapping (value = "/{id}")
     public void delete(@PathVariable Integer id) {

@@ -21,6 +21,11 @@ public class ItensPedidoResource implements IResource <ItensPedido, Integer> {
     @Autowired
     private ItensPedidoService itensPedidoService;
 
+    /**
+     * Este metodo cria um itens pedido
+     * @param entity
+     * @return
+     */
     @Override
     @PostMapping(
             consumes = {MediaType.APPLICATION_JSON_VALUE},
@@ -32,6 +37,11 @@ public class ItensPedidoResource implements IResource <ItensPedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo visuliza itens pedido
+     * @param id
+     * @return
+     */
     @Override
     @GetMapping(
             value = "/{id}",
@@ -42,6 +52,10 @@ public class ItensPedidoResource implements IResource <ItensPedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo lista itens pedido
+     * @return
+     */
     @Override
     @GetMapping ( produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<ItensPedido> get() {
@@ -49,6 +63,12 @@ public class ItensPedidoResource implements IResource <ItensPedido, Integer> {
         return List.of();
     }
 
+    /**
+     * Este metodo altera itens pedido
+     * @param id
+     * @param entity
+     * @return
+     */
     @Override
     @PutMapping(
             value = "/{id}",
@@ -61,6 +81,10 @@ public class ItensPedidoResource implements IResource <ItensPedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo deleta itens pedido
+     * @param id
+     */
     @Override
     @DeleteMapping (value = "/{id}")
     public void delete(Integer id) {

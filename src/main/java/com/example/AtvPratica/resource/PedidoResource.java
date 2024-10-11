@@ -18,6 +18,11 @@ public class PedidoResource implements IResource <Pedido, Integer> {
     @Autowired
     PedidoService pedidoService;
 
+    /**
+     * Este metodo cria um pedido
+     * @param entity
+     * @return
+     */
     @Override
     @PostMapping (
             consumes = {MediaType.APPLICATION_JSON_VALUE},
@@ -29,6 +34,11 @@ public class PedidoResource implements IResource <Pedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo visualiza o pedido
+     * @param id
+     * @return
+     */
     @Override
     @GetMapping (
             value = "/{id}",
@@ -39,6 +49,10 @@ public class PedidoResource implements IResource <Pedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo lista um produto
+     * @return
+     */
     @Override
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<Pedido> get() {
@@ -46,6 +60,12 @@ public class PedidoResource implements IResource <Pedido, Integer> {
         return List.of();
     }
 
+    /**
+     * Este metodo altera um pedido
+     * @param id
+     * @param entity
+     * @return
+     */
     @Override
     @PutMapping(
             value = "/{id}",
@@ -58,6 +78,10 @@ public class PedidoResource implements IResource <Pedido, Integer> {
         return null;
     }
 
+    /**
+     * Este metodo deleta um pedido
+     * @param id
+     */
     @Override
     @DeleteMapping (value = "/{id}")
     public void delete(@PathVariable Integer id) {
